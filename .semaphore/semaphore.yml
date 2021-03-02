@@ -5,9 +5,11 @@ agent:
     type: e1-standard-2
     os_image: ubuntu1804
 blocks:
-  - name: 'Block #1'
+  - name: Block
     task:
       jobs:
         - name: 'Job #1'
+          parallelism: 5
           commands:
             - checkout
+            - bash build.sh
